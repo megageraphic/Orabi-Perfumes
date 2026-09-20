@@ -18,7 +18,10 @@
             --green-total: #25d366;
             --text-light: #ffffff;
             --text-muted: #d1d1d1;
-            --card-bg: rgba(22, 22, 22, 0.85);
+            /* متغيرات خاصة بالمنيو الحريمي */
+            --pink-primary: #ff65b3;
+            --pink-light: #ffbdf4;
+            --pink-dark: #c72c84;
         }
 
         * {
@@ -70,14 +73,43 @@
             letter-spacing: 0.5px;
         }
 
-        /* حاوي المنيو مع خلفية الصورة 15.png */
+        /* حاوي المنيو */
         .menu-container {
             width: 100%;
             max-width: 700px;
             padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
 
-        .menu-card {
+        /* عنوان القسم داخل المنيو */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .men-title {
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .women-title {
+            background: linear-gradient(135deg, #ff65b3, #ffbdf4, #c72c84);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* المنيو الرجالي */
+        .menu-card-men {
             background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url('15.png') no-repeat center center;
             background-size: cover;
             border: 1px solid rgba(212, 175, 55, 0.4);
@@ -87,7 +119,70 @@
             backdrop-filter: blur(5px);
         }
 
-        /* جدول المنيو */
+        .menu-card-men .menu-table th {
+            color: var(--gold-primary);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .menu-card-men .menu-table tr td:first-child {
+            border-right: 3px solid var(--gold-primary);
+        }
+
+        .menu-card-men .price-text {
+            color: var(--gold-light);
+        }
+
+        .menu-card-men .qty-control {
+            border: 1px solid var(--gold-primary);
+        }
+
+        .menu-card-men .qty-btn {
+            color: var(--gold-primary);
+        }
+
+        .menu-card-men .qty-btn:hover {
+            background: var(--gold-primary);
+            color: #000;
+        }
+
+        /* المنيو الحريمي بلون مختلف (وردي/بنفسجي فاخر) */
+        .menu-card-women {
+            background: linear-gradient(rgba(20, 10, 20, 0.9), rgba(20, 10, 20, 0.9)), url('15.png') no-repeat center center;
+            background-size: cover;
+            border: 1px solid rgba(255, 101, 179, 0.5);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .menu-card-women .menu-table th {
+            color: var(--pink-primary);
+            border-bottom: 2px solid rgba(255, 101, 179, 0.3);
+        }
+
+        .menu-card-women .menu-table tr td:first-child {
+            border-right: 3px solid var(--pink-primary);
+        }
+
+        .menu-card-women .price-text {
+            color: var(--pink-light);
+        }
+
+        .menu-card-women .qty-control {
+            border: 1px solid var(--pink-primary);
+        }
+
+        .menu-card-women .qty-btn {
+            color: var(--pink-primary);
+        }
+
+        .menu-card-women .qty-btn:hover {
+            background: var(--pink-primary);
+            color: #000;
+        }
+
+        /* جدول المنيو المشترك */
         .menu-table {
             width: 100%;
             border-collapse: separate;
@@ -95,12 +190,10 @@
         }
 
         .menu-table th {
-            color: var(--gold-primary);
             font-size: 1.5rem;
             font-weight: bold;
             padding: 12px 10px;
             text-align: center;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
             background: rgba(0, 0, 0, 0.4);
         }
 
@@ -119,8 +212,8 @@
             padding: 14px 10px;
             text-align: center;
             vertical-align: middle;
-            border-top: 1px solid rgba(212, 175, 55, 0.25);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background 0.3s ease;
         }
 
@@ -131,7 +224,6 @@
         .menu-table tr td:first-child {
             border-top-right-radius: 12px;
             border-bottom-right-radius: 12px;
-            border-right: 3px solid var(--gold-primary);
             text-align: center;
             padding-right: 10px;
             font-weight: bold;
@@ -142,11 +234,9 @@
         .menu-table tr td:last-child {
             border-top-left-radius: 12px;
             border-bottom-left-radius: 12px;
-            border-left: 1px solid rgba(212, 175, 55, 0.25);
         }
 
         .price-text {
-            color: var(--gold-light);
             font-weight: bold;
             font-size: 1.3rem;
             margin-bottom: 6px;
@@ -159,7 +249,6 @@
             justify-content: center;
             gap: 8px;
             background: rgba(0, 0, 0, 0.7);
-            border: 1px solid var(--gold-primary);
             border-radius: 20px;
             padding: 3px 10px;
             font-family: sans-serif;
@@ -168,7 +257,6 @@
         .qty-btn {
             background: none;
             border: none;
-            color: var(--gold-primary);
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
@@ -179,11 +267,6 @@
             justify-content: center;
             border-radius: 50%;
             transition: background 0.2s, color 0.2s;
-        }
-
-        .qty-btn:hover {
-            background: var(--gold-primary);
-            color: #000;
         }
 
         .qty-val {
@@ -204,14 +287,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.25);
+            box-shadow: 0 0 15px rgb(251, 228, 98);
         }
 
         .total-price-label {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #ffffff;
+            color: #f5ecec;
             font-size: 1.4rem;
             font-weight: bold;
         }
@@ -315,7 +398,7 @@
             padding: 0.8rem 2rem;
             border-radius: 30px;
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
-            color: #000;
+            color: #ca3a3a;
             font-weight: bold;
             font-size: 1.1rem;
             text-decoration: none;
@@ -451,6 +534,7 @@
             .qty-btn { font-size: 0.95rem; width: 20px; height: 20px; }
             .total-price-label { font-size: 1.2rem; }
             .total-price-amount { font-size: 1.5rem; }
+            .section-title { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -459,118 +543,520 @@
     <!-- الهيدر -->
     <header>
         <h1>عرابي للعطور</h1>
-        <p>قائمة العطور الفاخرة والأسعار</p>
+        <p>قائمة العطور الفاخرة</p>
     </header>
 
-    <!-- قائمة المنيو التفاعلية خلفها صورة 15.png -->
+    <!-- حاوي المنيوهات -->
     <main class="menu-container">
-        <div class="menu-card">
-            <table class="menu-table">
-                <thead>
-                    <tr>
-                        <th class="col-name">العطر</th>
-                        <th class="col-size">30 ملي</th>
-                        <th class="col-size">50 ملي</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- سوفاج -->
-                    <tr data-name="سوفاج">
-                        <td>سوفاج</td>
-                        <td>
-                            <div class="price-text">150 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="30ملي" data-price="150">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-text">250 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="50ملي" data-price="250">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                    </tr>
+        
+        <!-- 1. المنيو الرجالي -->
+        <div class="menu-section">
+            <h2 class="section-title men-title"><i class="fas fa-spray-can-sparkles"></i> العطور الرجالي</h2>
+            <div class="menu-card-men">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th class="col-name">العطر</th>
+                            <th class="col-size">30 ملي</th>
+                            <th class="col-size">50 ملي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- سوفاج -->
+                        <tr data-name="سوفاج">
+                            <td>سوفاج</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
 
-                    <!-- وأي -->
-                    <tr data-name="وأي (Y)">
-                        <td>وأي (Y)</td>
-                        <td>
-                            <div class="price-text">150 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="30ملي" data-price="150">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-text">250 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="50ملي" data-price="250">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                    </tr>
+                        <!-- وأي -->
+                        <tr data-name="وأي">
+                            <td>وأي</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
 
-                    <!-- انفكتس -->
-                    <tr data-name="انفكتس">
-                        <td>انفكتس</td>
-                        <td>
-                            <div class="price-text">150 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="30ملي" data-price="150">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-text">250 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="50ملي" data-price="250">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                    </tr>
+                        <!-- انفكتس -->
+                        <tr data-name="انفكتس">
+                            <td>انفكتس</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
 
-                    <!-- لومال الكسير -->
-                    <tr data-name="لومال الكسير">
-                        <td>لومال الكسير</td>
-                        <td>
-                            <div class="price-text">150 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="30ملي" data-price="150">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price-text">250 ج</div>
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
-                                <span class="qty-val" data-size="50ملي" data-price="250">0</span>
-                                <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        <!-- لومال الكسير -->
+                        <tr data-name="لومال الكسير">
+                            <td>لومال الكسير</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
 
-            <!-- مربع إجمالي المبلغ باللون الأخضر أسفل الجدول -->
-            <div class="total-price-box">
-                <div class="total-price-label">
-                    <i class="fas fa-calculator"></i>
-                    إجمالي المبلغ:
-                </div>
-                <div class="total-price-amount" id="total-amount-display">0 ج</div>
+                        <!-- استورنج وزيو اتنسلي -->
+                        <tr data-name="استورنج وزيو اتنسلي">
+                            <td>استورنج وزيو اتنسلي</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- فوياج -->
+                        <tr data-name="فوياج">
+                            <td>فوياج</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- كريد افنتوس -->
+                        <tr data-name="كريد افنتوس">
+                            <td>كريد افنتوس</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- أوبن -->
+                        <tr data-name="أوبن">
+                            <td>أوبن</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- اترا ميل -->
+                        <tr data-name="اترا ميل">
+                            <td>اترا ميل</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- لاكوست وايت -->
+                        <tr data-name="لاكوست وايت">
+                            <td>لاكوست وايت</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- فانليا بودر -->
+                        <tr data-name="فانليا بودر">
+                            <td>فانليا بودر</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- كريد سيلفر -->
+                        <tr data-name="كريد سيلفر">
+                            <td>كريد سيلفر</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- عوود وود -->
+                        <tr data-name="عوود وود">
+                            <td>عوود وود</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- بمشيل -->
+                        <tr data-name="بمشيل">
+                            <td>بمشيل</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- اسكلبشر -->
+                        <tr data-name="اسكلبشر">
+                            <td>اسكلبشر</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- بلاك لكيزس -->
+                        <tr data-name="بلاك لكيزس">
+                            <td>بلاك لكيزس</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- توباكو فانليا -->
+                        <tr data-name="توباكو فانليا">
+                            <td>توباكو فانليا</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- بلاك افغانو -->
+                        <tr data-name="بلاك افغانو">
+                            <td>بلاك افغانو</td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">400 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="400">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </div>
 
-            <!-- قسم بيانات التوصيل والتوصيل أسفل المنيو -->
-            <div class="customer-info-section">
+        <!-- 2. المنيو الحريمي المنفصل (بلون وردي مميز) -->
+        <div class="menu-section">
+            <h2 class="section-title women-title"><i class="fas fa-wine-bottle"></i> العطور الحريمي</h2>
+            <div class="menu-card-women">
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th class="col-name">العطر الحريمي</th>
+                            <th class="col-size">30 ملي</th>
+                            <th class="col-size">50 ملي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- مسك مرشملو -->
+                        <tr data-name="مسك مرشملو">
+                            <td>مسك مرشملو</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- مسك رمان -->
+                        <tr data-name="مسك رمان">
+                            <td>مسك رمان</td>
+                            <td>
+                                <div class="price-text">200 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="200">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">300 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="300">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- نساء العالم -->
+                        <tr data-name="نساء العالم">
+                            <td>نساء العالم</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- جادور -->
+                        <tr data-name="جادور">
+                            <td>جادور</td>
+                            <td>
+                                <div class="price-text">150 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="30ملي" data-price="150">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="price-text">250 ج</div>
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                                    <span class="qty-val" data-size="50ملي" data-price="250">0</span>
+                                    <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- مربع إجمالي المبلغ المشترك لكل المنتجات -->
+        <div class="total-price-box">
+            <div class="total-price-label">
+                <i class="fas fa-calculator"></i>
+                إجمالي المبلغ:
+            </div>
+            <div class="total-price-amount" id="total-amount-display">0 ج</div>
+        </div>
+
+        <!-- قسم بيانات التوصيل -->
+        <div class="menu-card-men" style="padding: 1.5rem;">
+            <div class="customer-info-section" style="margin-top: 0; padding-top: 0; border-top: none;">
                 <div class="customer-info-title">بيانات الطلب والتوصيل</div>
                 
                 <!-- خانة الاسم -->
@@ -594,10 +1080,11 @@
                 <!-- زر إرسال الطلب عبر الواتساب -->
                 <button class="btn-send-whatsapp" onclick="sendOrderToWhatsApp()">
                     <i class="fab fa-whatsapp"></i>
-                    إرسال الطلب عبر الواتساب
+                    إرسال الطلب  
                 </button>
             </div>
         </div>
+
     </main>
 
     <!-- زر الرجوع للرئيسية -->
