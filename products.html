@@ -42,6 +42,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
         @keyframes gradientWave {
@@ -58,7 +59,7 @@
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
@@ -69,7 +70,7 @@
 
         header p {
             color: var(--gold-light);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             letter-spacing: 0.5px;
         }
 
@@ -86,7 +87,7 @@
         /* عنوان القسم داخل المنيو */
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 1.2rem;
             font-weight: bold;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
@@ -114,7 +115,7 @@
             background-size: cover;
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 20px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
         }
@@ -145,13 +146,13 @@
             color: #000;
         }
 
-        /* المنيو الحريمي بلون مختلف (وردي/بنفسجي فاخر) */
+        /* المنيو الحريمي */
         .menu-card-women {
             background: linear-gradient(rgba(20, 10, 20, 0.9), rgba(20, 10, 20, 0.9)), url('15.png') no-repeat center center;
             background-size: cover;
             border: 1px solid rgba(255, 101, 179, 0.5);
             border-radius: 20px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
         }
@@ -186,13 +187,13 @@
         .menu-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 12px;
+            border-spacing: 0 10px;
         }
 
         .menu-table th {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            padding: 12px 10px;
+            padding: 10px 6px;
             text-align: center;
             background: rgba(0, 0, 0, 0.4);
         }
@@ -209,37 +210,31 @@
 
         .menu-table tr td {
             background: rgba(25, 25, 25, 0.85);
-            padding: 14px 10px;
+            padding: 10px 6px;
             text-align: center;
             vertical-align: middle;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s ease;
-        }
-
-        .menu-table tr:hover td {
-            background: rgba(40, 40, 40, 0.95);
         }
 
         .menu-table tr td:first-child {
-            border-top-right-radius: 12px;
-            border-bottom-right-radius: 12px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
             text-align: center;
-            padding-right: 10px;
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             color: #ffffff;
         }
 
         .menu-table tr td:last-child {
-            border-top-left-radius: 12px;
-            border-bottom-left-radius: 12px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
 
         .price-text {
             font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 6px;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
         }
 
         /* أزرار الكمية التفاعلية */
@@ -247,21 +242,20 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 20px;
-            padding: 3px 10px;
-            font-family: sans-serif;
+            padding: 2px 8px;
         }
 
         .qty-btn {
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -271,42 +265,42 @@
 
         .qty-val {
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
-            min-width: 20px;
+            min-width: 18px;
             text-align: center;
         }
 
-        /* شريط إجمالي المبلغ باللون الأخضر */
+        /* شريط إجمالي المبلغ */
         .total-price-box {
             margin-top: 1.5rem;
-            padding: 12px 20px;
+            padding: 12px 18px;
             background: rgba(10, 10, 10, 0.9);
             border: 2px solid var(--green-total);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 0 15px rgb(251, 228, 98);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
         }
 
         .total-price-label {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: #f5ecec;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: bold;
         }
 
         .total-price-label i {
             color: var(--green-total);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .total-price-amount {
             color: var(--green-total);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
             text-shadow: 0 0 8px rgba(37, 211, 102, 0.5);
             font-family: sans-serif;
@@ -316,17 +310,16 @@
         .customer-info-section {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 2px dashed rgba(212, 175, 55, 0.4);
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .customer-info-title {
             color: var(--gold-light);
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
         }
 
         .input-group {
@@ -339,17 +332,17 @@
             position: absolute;
             right: 15px;
             color: var(--gold-primary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .input-control {
             width: 100%;
-            padding: 12px 45px 12px 15px;
+            padding: 11px 45px 11px 15px;
             background: rgba(10, 10, 10, 0.85);
             border: 1px solid rgba(212, 175, 55, 0.5);
             border-radius: 12px;
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1rem;
             outline: none;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
@@ -366,11 +359,11 @@
         /* زر إرسال الطلب عبر الواتساب */
         .btn-send-whatsapp {
             width: 100%;
-            margin-top: 1rem;
-            padding: 14px;
+            margin-top: 0.8rem;
+            padding: 13px;
             background: linear-gradient(135deg, #25d366, #128c7e);
             color: #ffffff;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             border: none;
             border-radius: 30px;
@@ -378,82 +371,80 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .btn-send-whatsapp:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
 
         /* زر العودة للرئيسية */
         .btn-back {
-            margin-top: 2rem;
-            margin-bottom: 3rem;
+            margin: 2rem 0 3rem 0;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 0.8rem 2rem;
+            gap: 8px;
+            padding: 0.7rem 1.8rem;
             border-radius: 30px;
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728);
-            color: #ca3a3a;
+            color: #1a1505;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            cursor: pointer;
         }
 
         .btn-back:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
         }
 
-        /* الأيقونات الثابتة العائمة (تشمل واتساب، فيسبوك، واتصال) */
+        /* الأيقونات الثابتة العائمة (بحجم أصغر ومناسب للموبايل) */
         .floating-contact-container {
             position: fixed;
-            bottom: 30px;
-            right: 25px;
+            bottom: 20px;
+            right: 15px;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 10px;
             z-index: 9999;
         }
 
         .floating-btn {
-            width: 58px;
-            height: 58px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #ffffff;
-            font-size: 1.7rem;
+            font-size: 1.25rem;
             text-decoration: none;
             transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
         .btn-whatsapp-float {
             background-color: #25d366;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
         }
 
         .btn-facebook-float {
             background-color: #1877f2;
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.5);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.4);
         }
 
         .btn-phone-float {
             background: linear-gradient(135deg, #bf953f, #d4af37, #aa771c);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
         }
 
         .floating-btn:hover {
-            transform: scale(1.12);
+            transform: scale(1.1);
         }
 
         /* الفوتر */
@@ -461,15 +452,15 @@
             width: 100%;
             background-color: rgba(5, 5, 5, 0.95);
             border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 1.8rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             color: #a0a0a0;
-            font-size: 1rem;
+            font-size: 0.9rem;
             backdrop-filter: blur(5px);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         footer p {
@@ -481,17 +472,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .footer-credits span {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #f3e5ab;
         }
 
         .footer-credits img {
-            height: 28px;
+            height: 24px;
             width: auto;
             object-fit: contain;
         }
@@ -500,13 +491,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             color: #fff;
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: transform 0.3s ease;
+            font-size: 0.75rem;
         }
 
         .footer-btn.phone-btn {
@@ -517,16 +507,20 @@
             background-color: #25d366;
         }
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            .menu-table th { font-size: 1.2rem; }
-            .menu-table tr td:first-child { font-size: 1.2rem; }
-            .price-text { font-size: 1.1rem; }
-            .qty-control { padding: 2px 6px; }
-            .qty-btn { font-size: 0.95rem; width: 20px; height: 20px; }
-            .total-price-label { font-size: 1.2rem; }
-            .total-price-amount { font-size: 1.5rem; }
-            .section-title { font-size: 1.8rem; }
+        /* تعديلات شاشات الموبايل الصغيرة */
+        @media (max-width: 500px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1rem; }
+            .section-title { font-size: 1.6rem; }
+            .menu-table th { font-size: 1.05rem; padding: 8px 4px; }
+            .menu-table tr td:first-child { font-size: 1rem; }
+            .price-text { font-size: 0.95rem; }
+            .qty-control { padding: 2px 5px; gap: 4px; }
+            .qty-btn { font-size: 0.85rem; width: 20px; height: 20px; }
+            .total-price-label { font-size: 1.1rem; }
+            .total-price-amount { font-size: 1.35rem; }
+            .floating-contact-container { bottom: 15px; right: 10px; gap: 8px; }
+            .floating-btn { width: 38px; height: 38px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -936,7 +930,7 @@
             </div>
         </div>
 
-        <!-- 2. المنيو الحريمي المنفصل (بلون وردي مميز) -->
+        <!-- 2. المنيو الحريمي المنفصل -->
         <div class="menu-section">
             <h2 class="section-title women-title"><i class="fas fa-wine-bottle"></i> العطور الحريمي</h2>
             <div class="menu-card-women">
@@ -1037,7 +1031,7 @@
             </div>
         </div>
 
-        <!-- مربع إجمالي المبلغ المشترك لكل المنتجات -->
+        <!-- مربع إجمالي المبلغ المشترك -->
         <div class="total-price-box">
             <div class="total-price-label">
                 <i class="fas fa-calculator"></i>
@@ -1047,29 +1041,25 @@
         </div>
 
         <!-- قسم بيانات التوصيل -->
-        <div class="menu-card-men" style="padding: 1.5rem;">
-            <div class="customer-info-section" style="margin-top: 0; padding-top: 0; border-top: none;">
+        <div class="menu-card-men" style="padding: 1.2rem;">
+            <div class="customer-info-section">
                 <div class="customer-info-title">بيانات الطلب والتوصيل</div>
                 
-                <!-- خانة الاسم -->
                 <div class="input-group">
                     <i class="fas fa-user"></i>
                     <input type="text" id="cust-name" class="input-control" placeholder="الاسم الكامل">
                 </div>
 
-                <!-- خانة الهاتف -->
                 <div class="input-group">
                     <i class="fas fa-phone"></i>
                     <input type="tel" id="cust-phone" class="input-control" placeholder="رقم الهاتف">
                 </div>
 
-                <!-- خانة العنوان -->
                 <div class="input-group">
                     <i class="fas fa-location-dot"></i>
                     <input type="text" id="cust-address" class="input-control" placeholder="عنوان التوصيل التفصيلي">
                 </div>
 
-                <!-- زر إرسال الطلب عبر الواتساب -->
                 <button class="btn-send-whatsapp" onclick="sendOrderToWhatsApp()">
                     <i class="fab fa-whatsapp"></i>
                     إرسال الطلب  
@@ -1085,7 +1075,7 @@
         الرجوع للرئيسية
     </a>
 
-    <!-- الأيقونات العائمة (تشمل واتساب، فيسبوك، واتصال) -->
+    <!-- الأيقونات العائمة (بحجم مناسب غير مزعج) -->
     <div class="floating-contact-container">
         <a href="https://wa.me/201035234373" target="_blank" class="floating-btn btn-whatsapp-float" title="تواصل عبر الواتساب">
             <i class="fab fa-whatsapp"></i>
