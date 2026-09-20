@@ -24,7 +24,6 @@
             --line: rgba(229, 193, 88, 0.35);
         }
 
-        /* تأثير الذهبي اللامع للعناوين والأنصوص الرئيسية */
         .gold-gradient-text {
             background: linear-gradient(135deg, #fff2cc 0%, #e5c158 35%, #b8860b 70%, #fbe29d 100%);
             -webkit-background-clip: text;
@@ -55,7 +54,6 @@
 
         a { color: inherit; }
 
-        /* خلفية شفافة بشعار العلامة */
         body::before {
             content: "";
             position: fixed;
@@ -70,7 +68,6 @@
             pointer-events: none;
         }
 
-        /* ===== الهيدر ===== */
         header {
             background: rgba(11, 10, 8, 0.88);
             border-bottom: 1px solid var(--line);
@@ -109,7 +106,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
         }
 
@@ -127,7 +124,41 @@
             text-shadow: 0 0 8px #e5c158;
         }
 
-        /* القائمة المنبثقة لزر تواصل معنا */
+        .top-social-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            text-decoration: none;
+            background: var(--bg-panel);
+            border: 1px solid var(--line);
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .top-social-btn.facebook { color: #1877f2; }
+        .top-social-btn.facebook:hover {
+            background: #1877f2;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(24, 119, 242, 0.6);
+        }
+
+        .top-social-btn.whatsapp { color: #25d366; }
+        .top-social-btn.whatsapp:hover {
+            background: #25d366;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+        }
+
         .contact-dropdown {
             position: relative;
             display: inline-block;
@@ -196,7 +227,6 @@
         .dropdown-item i.fa-phone { color: var(--gold-main); }
         .dropdown-item i.fa-whatsapp { color: #52b788; }
 
-        /* ===== الشريط الإعلاني ===== */
         .announcement-container {
             background: var(--bg-panel);
             border-top: 1px solid var(--line);
@@ -242,11 +272,6 @@
             animation-play-state: paused;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .announcement-text { animation: none; }
-        }
-
-        /* ===== القسم الرئيسي ===== */
         .hero {
             min-height: 82vh;
             display: flex;
@@ -275,7 +300,6 @@
             margin-bottom: 2.2rem;
         }
 
-        /* الزر الرئيسي التفاعلي */
         .btn-view-products {
             position: relative;
             display: inline-flex;
@@ -294,15 +318,13 @@
             overflow: hidden;
         }
 
-        /* حركة الأيقونة المستمرة */
         .btn-view-products i {
-            font-size: 1.3rem;
-            color: #ffffff;
+            font-size: 1.625rem; 
+            color: #fbe29d; 
             transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
             animation: iconMotion 2.5s infinite ease-in-out;
         }
 
-        /* حركة النبض والتوهج للأيقونة */
         @keyframes iconMotion {
             0%, 100% {
                 transform: scale(1) rotate(0deg);
@@ -314,7 +336,6 @@
             }
         }
 
-        /* تغيير الألوان والتأثير عند الوقوف بالماوس (Hover) */
         .btn-view-products:hover,
         .btn-view-products:focus-visible {
             transform: translateY(-3px);
@@ -329,20 +350,12 @@
             filter: none;
         }
 
-        /* حركة استجابة عند الوقوف على الأيقونة */
         @keyframes iconHoverSpin {
-            0% {
-                transform: scale(1) rotate(0deg);
-            }
-            50% {
-                transform: scale(1.3) rotate(20deg);
-            }
-            100% {
-                transform: scale(1.15) rotate(0deg);
-            }
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.3) rotate(20deg); }
+            100% { transform: scale(1.15) rotate(0deg); }
         }
 
-        /* عرض الصور المتحركة */
         .hero-slider {
             position: relative;
             width: 340px;
@@ -367,7 +380,6 @@
             opacity: 1;
         }
 
-        /* ===== قسم المنتجات أسفل الصفحة ===== */
         .products {
             max-width: 1100px;
             margin: 0 auto;
@@ -397,7 +409,6 @@
             text-align: center;
         }
 
-        /* إطار طولي بأبعاد 3:4 */
         .img-container {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -432,7 +443,7 @@
             font-size: 0.98rem;
         }
 
-        /* ===== الأيقونات العائمة ===== */
+        /* الأيقونات الثابتة العائمة بجانب الصفحة */
         .floating-contact-container {
             position: fixed;
             bottom: 30px;
@@ -464,17 +475,15 @@
             box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);
         }
 
-        .btn-whatsapp-float {
-            color: #52b788;
-        }
-        .btn-whatsapp-float:hover { background: #52b788; color: #fff; }
+        .btn-whatsapp-float { color: #25d366; }
+        .btn-whatsapp-float:hover { background: #25d366; color: #fff; }
 
-        .btn-phone-float {
-            color: var(--gold-main);
-        }
+        .btn-facebook-float { color: #1877f2; }
+        .btn-facebook-float:hover { background: #1877f2; color: #fff; }
+
+        .btn-phone-float { color: var(--gold-main); }
         .btn-phone-float:hover { background: linear-gradient(135deg, #e5c158, #b8860b); color: var(--bg); }
 
-        /* ===== الفوتر ===== */
         footer {
             border-top: 1px solid var(--line);
             padding: 2.5rem 1rem;
@@ -520,38 +529,10 @@
             background: linear-gradient(135deg, #e5c158, #b8860b);
             color: var(--bg);
         }
-
-        a:focus-visible, .btn-contact:focus-visible, .dropdown-item:focus-visible {
-            outline: 2px solid var(--gold-light);
-            outline-offset: 3px;
-        }
-
-        /* ===== الاستجابة للشاشات الصغيرة ===== */
-        @media (max-width: 900px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 3rem 6vw;
-                min-height: auto;
-            }
-            .hero-content { max-width: 100%; }
-            .hero-slider { width: 260px; height: 340px; }
-        }
-
-        @media (max-width: 640px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 1.2rem;
-            }
-            .hero h1 { font-size: 2.3rem; }
-            .product-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- الهيدر -->
     <header>
         <a href="#home" class="logo-container">
             <img src="10.png" alt="عرابي للعطور" class="logo-img">
@@ -561,6 +542,15 @@
         <nav>
             <ul>
                 <li><a href="#home">الرئيسية</a></li>
+                
+                <li class="top-social-icons">
+                    <a href="https://www.facebook.com/share/1CPBZ5tEX1/?mibextid=wwXIfr" target="_blank" class="top-social-btn facebook" title="صفحتنا على فيسبوك">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/201035234373" target="_blank" class="top-social-btn whatsapp" title="تواصل عبر الواتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </li>
 
                 <li class="contact-dropdown">
                     <div class="btn-contact">
@@ -572,7 +562,7 @@
                             <i class="fas fa-phone"></i>
                             اتصال هاتفي
                         </a>
-                        <a href="https://wa.me/" target="_blank" class="dropdown-item">
+                        <a href="https://wa.me/201035234373" target="_blank" class="dropdown-item">
                             <i class="fab fa-whatsapp"></i>
                             محادثة واتساب
                         </a>
@@ -582,20 +572,18 @@
         </nav>
     </header>
 
-    <!-- الشريط الإعلاني -->
     <div class="announcement-container">
         <div class="announcement-text">
             ✨ <span class="brand">عرابي للعطور</span> <span class="icon">◆</span> العاشر من رمضان ✨
         </div>
     </div>
 
-    <!-- قسم العرض الرئيسي -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="gold-gradient-text">عرابي للعطور الفاخرة</h1>
             <p>عالم من الفخامة والأناقة يجسد أصالة العطور الشرقية والغربية بأرقى المكونات العالمية.</p>
 
-            <a href="products.html" target="_blank" class="btn-view-products">
+            <a href="products.html" class="btn-view-products">
                 <i class="fas fa-spray-can-sparkles"></i>
                 قائمة العطور
             </a>
@@ -610,11 +598,9 @@
         </div>
     </section>
 
-    <!-- قسم المنتجات أسفل الصفحة -->
     <section class="products" id="products">
         <h2 class="section-title gold-gradient-text">أحدث الإصدارات</h2>
         <div class="product-grid">
-
             <div class="product-card">
                 <div class="img-container">
                     <img src="12.png" alt="عرابي الملكي" class="product-img">
@@ -622,7 +608,6 @@
                 <h3 class="gold-gradient-text">عرابي الملكي</h3>
                 <p>مزيج ساحر من العود الأنيق واللمسات الذهبية للعنبر.</p>
             </div>
-
             <div class="product-card">
                 <div class="img-container">
                     <img src="13.png" alt="الذهب الخالص" class="product-img">
@@ -630,41 +615,40 @@
                 <h3 class="gold-gradient-text">الذهب الخالص</h3>
                 <p>عطر شرقي فواح مستوحى من التراث العربي الأصيل.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- الأيقونات الثابتة العائمة -->
+    <!-- الأيقونات الثابتة العائمة (تتضمن واتساب، فيسبوك، واتصال هاتفي) -->
     <div class="floating-contact-container">
-        <a href="https://wa.me/" target="_blank" class="floating-btn btn-whatsapp-float" title="تواصل عبر الواتساب">
+        <a href="https://wa.me/201035234373" target="_blank" class="floating-btn btn-whatsapp-float" title="تواصل عبر الواتساب">
             <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1CPBZ5tEX1/?mibextid=wwXIfr" target="_blank" class="floating-btn btn-facebook-float" title="تابعنا على فيسبوك">
+            <i class="fab fa-facebook-f"></i>
         </a>
         <a href="tel:01035234373" class="floating-btn btn-phone-float" title="اتصل بنا">
             <i class="fas fa-phone"></i>
         </a>
     </div>
 
-    <!-- الفوتر -->
     <footer>
         <p>&copy; جميع الحقوق محفوظة - عرابي للعطور</p>
         <div class="footer-credits">
             <span>تصميم بواسطة</span>
             <img src="100.png" alt="شعار التصميم">
             <a href="tel:01010255123" class="footer-btn" title="اتصال هاتفي"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://wa.me/" target="_blank" class="footer-btn" title="مراسلة عبر الواتساب"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/201010255123" target="_blank" class="footer-btn" title="مراسلة عبر الواتساب"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </footer>
 
     <script>
         const slides = document.querySelectorAll('.hero-slider .slide');
         let currentSlide = 0;
-
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-
         setInterval(nextSlide, 3000);
     </script>
 </body>

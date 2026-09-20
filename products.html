@@ -412,7 +412,7 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
         }
 
-        /* الأيقونات الثابتة العائمة */
+        /* الأيقونات الثابتة العائمة (تشمل واتساب، فيسبوك، واتصال) */
         .floating-contact-container {
             position: fixed;
             bottom: 30px;
@@ -434,34 +434,26 @@
             font-size: 1.7rem;
             text-decoration: none;
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         .btn-whatsapp-float {
             background-color: #25d366;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            animation: pulseGreen 2s infinite;
+        }
+
+        .btn-facebook-float {
+            background-color: #1877f2;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.5);
         }
 
         .btn-phone-float {
             background: linear-gradient(135deg, #bf953f, #d4af37, #aa771c);
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
-            animation: pulseGold 2s infinite 0.5s;
         }
 
         .floating-btn:hover {
             transform: scale(1.12);
-        }
-
-        @keyframes pulseGreen {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        @keyframes pulseGold {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.8); }
-            70% { box-shadow: 0 0 0 18px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
         /* الفوتر */
@@ -1093,10 +1085,13 @@
         الرجوع للرئيسية
     </a>
 
-    <!-- الأيقونات العائمة -->
+    <!-- الأيقونات العائمة (تشمل واتساب، فيسبوك، واتصال) -->
     <div class="floating-contact-container">
         <a href="https://wa.me/201035234373" target="_blank" class="floating-btn btn-whatsapp-float" title="تواصل عبر الواتساب">
             <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1CPBZ5tEX1/?mibextid=wwXIfr" target="_blank" class="floating-btn btn-facebook-float" title="تابعنا على فيسبوك">
+            <i class="fab fa-facebook-f"></i>
         </a>
         <a href="tel:01035234373" class="floating-btn btn-phone-float" title="اتصل بنا">
             <i class="fas fa-phone"></i>
