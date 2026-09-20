@@ -351,18 +351,6 @@
             background: linear-gradient(135deg, #fbe29d 0%, #e5c158 100%);
         }
 
-        .btn-view-products:hover i {
-            color: #0b0a08;
-            animation: iconHoverSpin 0.5s ease-in-out forwards;
-            filter: none;
-        }
-
-        @keyframes iconHoverSpin {
-            0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.3) rotate(20deg); }
-            100% { transform: scale(1.15) rotate(0deg); }
-        }
-
         .hero-slider {
             position: relative;
             width: 100%;
@@ -380,7 +368,7 @@
             inset: 12px;
             width: calc(100% - 24px);
             height: calc(100% - 24px);
-            object-fit: cover;
+            object-fit: contain;
             opacity: 0;
             transition: opacity 1s ease;
         }
@@ -404,7 +392,7 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
             justify-content: center;
             gap: 2rem;
         }
@@ -421,18 +409,22 @@
         .img-container {
             width: 100%;
             aspect-ratio: 3 / 4;
-            max-height: 400px;
+            max-height: 420px;
             overflow: hidden;
             margin-bottom: 1rem;
             background: var(--bg-panel);
             border: 1px solid var(--line);
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
         }
 
         .product-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             filter: brightness(0.95);
             transition: filter 0.4s ease, transform 0.6s ease;
         }
@@ -444,12 +436,44 @@
 
         .product-card h3 {
             font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .product-card p {
             color: #d8c282;
             font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* زر "اطلب الآن" الذي يوجه للواتساب مباشرة مع البيانات */
+        .btn-order-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0.55rem 1.4rem;
+            border-radius: 30px;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border: 1px solid #25d366;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-order-whatsapp i {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .btn-order-whatsapp:hover,
+        .btn-order-whatsapp:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 0 18px rgba(37, 211, 102, 0.7);
+            background: linear-gradient(135deg, #2be472 0%, #0f7567 100%);
         }
 
         /* الأيقونات الثابتة العائمة بجانب الصفحة */
@@ -476,12 +500,6 @@
             border: 1px solid var(--line);
             transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-        }
-
-        .floating-btn:hover,
-        .floating-btn:focus-visible {
-            transform: translateY(-3px);
-            box-shadow: 0 0 15px rgba(229, 193, 88, 0.3);
         }
 
         .btn-whatsapp-float { color: #25d366; }
@@ -540,7 +558,6 @@
             color: var(--bg);
         }
 
-        /* استعلامات الوسائط (Media Queries) للشاشات الصغيرة والمتوسطة */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -665,24 +682,34 @@
     <section class="products" id="products">
         <h2 class="section-title gold-gradient-text">أحدث الإصدارات</h2>
         <div class="product-grid">
+            <!-- المنتج الأول -->
             <div class="product-card">
                 <div class="img-container">
                     <img src="12.png" alt="عرابي الملكي" class="product-img">
                 </div>
                 <h3 class="gold-gradient-text">عرابي الملكي</h3>
                 <p>مزيج ساحر من العود الأنيق واللمسات الذهبية للعنبر.</p>
+                <button class="btn-order-whatsapp" onclick="orderProduct('عرابي الملكي')">
+                    <i class="fab fa-whatsapp"></i>
+                    اطلب الآن
+                </button>
             </div>
+            <!-- المنتج الثاني -->
             <div class="product-card">
                 <div class="img-container">
                     <img src="13.png" alt="الذهب الخالص" class="product-img">
                 </div>
                 <h3 class="gold-gradient-text">الذهب الخالص</h3>
                 <p>عطر شرقي فواح مستوحى من التراث العربي الأصيل.</p>
+                <button class="btn-order-whatsapp" onclick="orderProduct('الذهب الخالص')">
+                    <i class="fab fa-whatsapp"></i>
+                    اطلب الآن
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- الأيقونات الثابتة العائمة (تتضمن واتساب، فيسبوك، واتصال هاتفي) -->
+    <!-- الأيقونات الثابتة العائمة -->
     <div class="floating-contact-container">
         <a href="https://wa.me/201035234373" target="_blank" class="floating-btn btn-whatsapp-float" title="تواصل عبر الواتساب">
             <i class="fab fa-whatsapp"></i>
@@ -706,6 +733,7 @@
     </footer>
 
     <script>
+        // سكربت السلايدر
         const slides = document.querySelectorAll('.hero-slider .slide');
         let currentSlide = 0;
         function nextSlide() {
@@ -714,6 +742,14 @@
             slides[currentSlide].classList.add('active');
         }
         setInterval(nextSlide, 3000);
+
+        // دالة إرسال الطلب عبر الواتساب مباشرة مع تفاصيل المنتج
+        function orderProduct(productName) {
+            const phoneNumber = "201035234373"; // رقم الواتساب الخاص بك
+            const message = `مرحباً، أرغب في طلب عطر: *${productName}* من قسم أحدث الإصدارات. يرجى تأكيد الطلب وتفاصيل التوصيل.`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
     </script>
 </body>
 </html>
