@@ -46,6 +46,7 @@
             position: relative;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, .logo-text, .announcement-text {
@@ -74,28 +75,30 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 1.1rem 2.5rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
             text-decoration: none;
         }
 
         .logo-img {
-            max-height: 52px;
+            max-height: 42px;
             width: auto;
             object-fit: contain;
         }
 
         .logo-text {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             background: linear-gradient(135deg, #fff2cc 0%, #e5c158 50%, #b8860b 100%);
@@ -106,13 +109,14 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         nav > ul > li > a {
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #ebd18c;
             transition: color 0.25s ease;
             position: relative;
@@ -127,17 +131,17 @@
         .top-social-icons {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
 
         .top-social-btn {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-decoration: none;
             background: var(--bg-panel);
             border: 1px solid var(--line);
@@ -167,12 +171,12 @@
         .btn-contact {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 0.6rem 1.5rem;
+            gap: 8px;
+            padding: 0.5rem 1rem;
             border-radius: 2px;
             color: var(--gold-light) !important;
             font-weight: 500;
-            font-size: 0.92rem;
+            font-size: 0.85rem;
             text-decoration: none;
             background: transparent;
             border: 1px solid var(--gold-main);
@@ -192,11 +196,11 @@
             position: absolute;
             top: 100%;
             left: 0;
-            margin-top: 10px;
+            margin-top: 5px;
             background-color: var(--bg-panel);
             border: 1px solid var(--line);
             padding: 6px 0;
-            min-width: 190px;
+            min-width: 160px;
             box-shadow: 0 12px 30px rgba(0,0,0,0.8);
             z-index: 1001;
             flex-direction: column;
@@ -210,11 +214,11 @@
         .dropdown-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 11px 18px;
+            gap: 10px;
+            padding: 10px 15px;
             color: #f7e7b4;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: background 0.2s, color 0.2s;
         }
 
@@ -233,14 +237,14 @@
             border-bottom: 1px solid var(--line);
             overflow: hidden;
             width: 100%;
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
             direction: ltr;
         }
 
         .announcement-text {
             display: inline-block;
             color: #e2cb83 !important;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 400;
             letter-spacing: 0.4px;
             white-space: nowrap;
@@ -250,7 +254,7 @@
 
         .announcement-text span.brand {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             margin: 0 6px;
             background: linear-gradient(135deg, #fff2cc, #e5c158);
             -webkit-background-clip: text;
@@ -260,7 +264,7 @@
         .announcement-text span.icon {
             color: var(--gold-main);
             margin: 0 10px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         @keyframes moveLeftToRight {
@@ -273,43 +277,46 @@
         }
 
         .hero {
-            min-height: 82vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
-            gap: 5vw;
-            padding: 4rem 6vw;
+            justify-content: space-between;
+            gap: 3rem;
+            padding: 3rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .hero-content {
             flex: 1;
+            min-width: 280px;
             max-width: 46ch;
         }
 
         .hero h1 {
-            font-size: 3.4rem;
+            font-size: 2.5rem;
             font-weight: 700;
             line-height: 1.25;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1rem;
         }
 
         .hero p {
             color: #d8c282;
-            font-size: 1.08rem;
-            margin-bottom: 2.2rem;
+            font-size: 1rem;
+            margin-bottom: 1.8rem;
         }
 
         .btn-view-products {
             position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 0.9rem 2.4rem;
+            gap: 10px;
+            padding: 0.8rem 2rem;
             border-radius: 4px;
             color: #ffffff;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
             text-decoration: none;
             background: linear-gradient(135deg, #a8703f 0%, #e5c158 50%, #b8860b 100%);
             border: 1px solid var(--gold-light);
@@ -319,7 +326,7 @@
         }
 
         .btn-view-products i {
-            font-size: 1.625rem; 
+            font-size: 1.4rem; 
             color: #fbe29d; 
             transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
             animation: iconMotion 2.5s infinite ease-in-out;
@@ -358,19 +365,21 @@
 
         .hero-slider {
             position: relative;
-            width: 340px;
-            height: 420px;
+            width: 100%;
+            max-width: 320px;
+            height: 380px;
+            margin: 0 auto;
             flex-shrink: 0;
             border: 1px solid var(--line);
-            padding: 14px;
+            padding: 12px;
             box-shadow: 0 0 25px rgba(229, 193, 88, 0.1);
         }
 
         .hero-slider .slide {
             position: absolute;
-            inset: 14px;
-            width: calc(100% - 28px);
-            height: calc(100% - 28px);
+            inset: 12px;
+            width: calc(100% - 24px);
+            height: calc(100% - 24px);
             object-fit: cover;
             opacity: 0;
             transition: opacity 1s ease;
@@ -383,26 +392,26 @@
         .products {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 6vw 6rem;
+            padding: 3rem 5% 5rem;
         }
 
         .section-title {
-            font-size: 2.1rem;
+            font-size: 1.8rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .product-card {
             border-top: 1px solid var(--line);
-            padding-top: 1.6rem;
+            padding-top: 1.2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -412,9 +421,9 @@
         .img-container {
             width: 100%;
             aspect-ratio: 3 / 4;
-            max-height: 480px;
+            max-height: 400px;
             overflow: hidden;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1rem;
             background: var(--bg-panel);
             border: 1px solid var(--line);
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
@@ -434,34 +443,34 @@
         }
 
         .product-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.6rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .product-card p {
             color: #d8c282;
-            font-size: 0.98rem;
+            font-size: 0.9rem;
         }
 
         /* الأيقونات الثابتة العائمة بجانب الصفحة */
         .floating-contact-container {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 10px;
             z-index: 999;
         }
 
         .floating-btn {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             text-decoration: none;
             background: var(--bg-panel);
             border: 1px solid var(--line);
@@ -486,25 +495,26 @@
 
         footer {
             border-top: 1px solid var(--line);
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem;
             text-align: center;
             color: #c9b06b;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
         }
 
         .footer-credits {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .footer-credits img {
-            height: 26px;
+            height: 24px;
             width: auto;
             object-fit: contain;
             opacity: 0.9;
@@ -514,20 +524,74 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             color: var(--gold-main);
             text-decoration: none;
             border: 1px solid var(--line);
             transition: all 0.25s ease;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .footer-btn:hover,
         .footer-btn:focus-visible {
             background: linear-gradient(135deg, #e5c158, #b8860b);
             color: var(--bg);
+        }
+
+        /* استعلامات الوسائط (Media Queries) للشاشات الصغيرة والمتوسطة */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 0.8rem;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .hero-slider {
+                width: 100%;
+                max-width: 280px;
+                height: 340px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .floating-contact-container {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .floating-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
